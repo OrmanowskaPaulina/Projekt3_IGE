@@ -1,0 +1,41 @@
+<AddLocationForm>:
+    orientation: "vertical"
+
+    my_map: map
+    stat: analysis
+    plot: plots
+    
+    BoxLayout:
+        height: "40dp"
+        size_hint_y: None
+        Button:
+            size_hint_x: 25
+            text: "Zaznacz trase"
+            on_press: root.analizuj_plik()
+        Button:
+            size_hint_x:25
+            text: "Statystyki"
+            on_press: root.statystyka()
+        Button:
+            size_hint_x:25
+            text: "Wykres"
+            on_press: root.rysuj_wykres()
+            
+    BoxLayout:
+        orientation: 'vertical'
+        MapView:
+            lat: 0
+            lon: 0
+            zoom: 1
+            id: map
+
+    BoxLayout:
+        height: "125dp"
+        size_hint_y: None
+        TextInput:
+            id: analysis
+    BoxLayout:
+        height: "125dp"
+        size_hint_y: None
+        TextInput:
+            id: plots
